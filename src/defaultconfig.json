@@ -1,0 +1,10 @@
+// {
+//     "botToken": /* Insert Telegram Bot token*/,
+//     "userTelegramId": /* Insert Telegram user id */,
+//     "polling": {
+//         "interval": 1000,
+//         "timeout": 0,
+//         "limit": 100,
+//         "retryTimeout": 5000
+//     }
+// }

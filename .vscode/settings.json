@@ -1,0 +1,8 @@
+{
+    "eslint.enable": false,
+    "tslint.enable": true,
+    "editor.renderWhitespace": "all",
+    "editor.renderIndentGuides": true,
+    "typescript.tsdk": "./node_modules/typescript/lib",
+    "typescript.referencesCodeLens.enabled": false
+}
