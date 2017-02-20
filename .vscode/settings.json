@@ -4,5 +4,6 @@
     "editor.renderWhitespace": "all",
     "editor.renderIndentGuides": true,
     "typescript.tsdk": "./node_modules/typescript/lib",
-    "typescript.referencesCodeLens.enabled": false
+    "typescript.referencesCodeLens.enabled": false,
+    "editor.fontSize": 13
 }
