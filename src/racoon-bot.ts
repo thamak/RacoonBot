@@ -1,6 +1,6 @@
 import TeleBot from "telebot";
-import Logger from "./logger/logger";
-import AppConfig from "./appconfig.json";
+import * as AppConfig from "./appconfig.json";
+import Logger from "./tools/logger";
 
 const logger: Logger = new Logger();
 const userTelegramId: number = AppConfig.userTelegramId;
@@ -18,8 +18,8 @@ const bot: TeleBot = new TeleBot( {
 });
 
 bot.on( "text", ( message: any ): void => {
-    let id: number = message.from.id;
-    let text: string = message.text;
+    const id: number = message.from.id;
+    const text: string = message.text;
     logger.info( `Msg received from ${id}: ${text}` );
 
     if ( id !== userTelegramId ) {
@@ -30,9 +30,9 @@ bot.on( "text", ( message: any ): void => {
 });
 
 bot.on( "/sab", ( message: any ): void => {
-    let id: number = message.from.id;
+    const id: number = message.from.id;
 
-    let markup: any = bot.keyboard( [
+    const markup: any = bot.keyboard( [
         [ "/buttons", "/inlineKeyboard" ],
         [ "/start", "/hide" ]
     ], { resize: true });
@@ -40,9 +40,8 @@ bot.on( "/sab", ( message: any ): void => {
     return bot.sendMessage( id, "Keyboard example.", { markup });
 });
 
-bot.on("/inlineKeyboard", msg => {
-
-  let markup = bot.inlineKeyboard([
+bot.on("/inlineKeyboard", ( message: any ): void => {
+  const markup: any = bot.inlineKeyboard([
     [
       bot.inlineButton("callback", { callback: "this_is_data" }),
       bot.inlineButton("inline", { inline: "some query" })
@@ -51,7 +50,7 @@ bot.on("/inlineKeyboard", msg => {
     ]
   ]);
 
-  return bot.sendMessage(msg.from.id, "Inline keyboard example.", { markup });
+  return bot.sendMessage(message.from.id, "Inline keyboard example.", { markup });
 
 });
 

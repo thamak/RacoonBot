@@ -1,9 +1,0 @@
-{
-    "parserOptions": {
-        "ecmaVersion": 6,
-        "sourceType": "module"
-    },
-    "rules": {
-        "react/jsx-sort-prop-types": 0
-  }
-}

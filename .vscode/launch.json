@@ -7,7 +7,7 @@
             "type": "node2",
             "request": "launch",
             "name": "Launch",
-            "program": "${workspaceRoot}\\dist\\app.bundle.js",
+            "program": "${workspaceRoot}\\dist\\racoon-bot.js",
             "cwd": "${workspaceRoot}",
             "runtimeArgs": [
                 "--nolazy"
